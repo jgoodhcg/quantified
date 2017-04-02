@@ -1,0 +1,15 @@
+version: '2'
+services:
+ clojure:
+    build:
+      context: .
+      dockerfile: clj.dockerfile
+    image: quantified
+    container_name: quantified-container
+    ports:
+      - "7888:7888"
+      - "3000:3000"
+      - "3449:3449"
+      - "7002:7002"
+    volumes:
+      - .:/quantified
