@@ -17,6 +17,7 @@
 ## dev setup
 1. `docker-compose up`
 2. The timing of container instantiation isn't quite perfect enough to automate the migrations - run `docker exec -ti quantified-container lein run migrate` before connecting to the nrepl
+3. Connect to the nrepl and run `(quantified.core/-main)` to start the web service. Going to `http://localhost:3000` should bring up the hello world page. The commands _(start)_ and _(stop)_ don't appear to work over the nrepl on the container.
 
 ## adding migrations
 1. `docker exec -ti lein migratus create [name-of-migration-action]`
