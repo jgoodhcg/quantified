@@ -11,5 +11,22 @@ services:
       - "3000:3000"
       - "3449:3449"
       - "7002:7002"
+    links:                        # links should induce dependency ordering
+      - postgres
     volumes:
       - .:/quantified
+ postgres:
+    build:
+      context: .
+      dockerfile: postgres.dockerfile
+    image: quantified-db
+    container_name: quantified-db-container
+    environment: 
+      DEV_USER: "quantified_dev"
+      DEV_PASS: "quantified_dev"
+      DEV_NAME: "quantified_dev"
+      TEST_USER: "quantified_test"
+      TEST_PASS: "quantified_test"
+      TEST_NAME: "quantified_test"
+    ports: 
+      - "5432:5432"
