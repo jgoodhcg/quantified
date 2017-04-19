@@ -1,0 +1,1 @@
+drop table link_workout_sessions_users;

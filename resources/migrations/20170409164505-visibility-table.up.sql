@@ -1,7 +1,7 @@
 create table visibility (
-       id serial,
-       tbl varchar(255),
-       col_id int,
-       moment timestamp default current_timestamp,
-       visible boolean
+id serial primary key,
+tbl varchar(255),
+row_id int,
+moment timestamp default current_timestamp,
+visible boolean
 );
